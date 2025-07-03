@@ -8,10 +8,10 @@ import {
   Image,
   Settings,
 } from "lucide-react";
-import Button from "./Button";
+import Button from "../ui/Button";
 import { useState } from "react";
 import ImageC from "next/image";
-interface Props {}
+type Props = Record<string, never>;
 type User = {
   id: number;
   label: string;
@@ -37,13 +37,10 @@ const datas: Data[] = [
   { id: 3, label: "Event", count: "4.6K" },
 ];
 
-
 const Navbar: NextPage<Props> = () => {
   const [selectedId, setSelectedId] = useState<number>(1);
   return (
-    <div
-      className='flex flex-col justify-evenly gap-5 px-2 py-12 w-xs max-lg:w-auto mx-5 '
-    >
+    <div className='flex flex-col justify-evenly gap-5 px-2 py-12 w-xs max-lg:w-auto mx-5 '>
       <div className='flex flex-col items-center'>
         <div className='w-25 h-25 rounded-full border-3 border-amber-300 p-2'>
           <ImageC
@@ -63,7 +60,10 @@ const Navbar: NextPage<Props> = () => {
 
       <div className='flex p-2 text-white rounded-lg bg-[#1F2125] justify-evenly'>
         {datas.map((data) => (
-          <div className='flex flex-col mx-2 items-center justify-center'>
+          <div
+            key={data.id}
+            className='flex flex-col mx-2 items-center justify-center'
+          >
             <span className='font-bold'>{data.count}</span>
             <span className='text-xs text-gray-400'>{data.label}</span>
           </div>
