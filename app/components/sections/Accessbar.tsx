@@ -12,6 +12,7 @@ const Accessbar: NextPage<Props> = ({}) => {
         </div>
       </div>
       <div className='flex-1/2 overflow-y-auto scrollbar-hide'>
+        
         <Feeds />
       </div>
     </div>
