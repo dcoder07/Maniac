@@ -63,6 +63,7 @@ export default async function Feeds() {
             author_name={data.byline}
             title={data.articleTitle.plainText}
             time={extractDayAndTime(data.date)}
+            extUrl ={data.externalUrl}
           />
         ))}
       </div>
