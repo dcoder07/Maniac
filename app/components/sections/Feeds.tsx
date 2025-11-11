@@ -50,10 +50,9 @@ export default async function Feeds() {
   console.log(datas);
   return (
     <div className='flex flex-col w-full h-[100vh] overflow-y-auto scrollbar-hide'>
-      <div className='flex justify-center mx-5 mt-5 items-center font-bold text-2xl tracking-wide'>
-        <>Latest Feeds</>
-      </div>
-
+       <div className='flex justify-center mx-5 mt-5 items-center font-bold text-2xl tracking-wide'>
+          <>Latest News</>
+        </div>
       <div className='grid max-lg:grid-cols-1 grid-cols-2 gap-8 mt-5 px-5'>
         {datas.map((data) => (
           <Cards
@@ -63,7 +62,7 @@ export default async function Feeds() {
             author_name={data.byline}
             title={data.articleTitle.plainText}
             time={extractDayAndTime(data.date)}
-            extUrl ={data.externalUrl}
+            extUrl={data.externalUrl}
           />
         ))}
       </div>
