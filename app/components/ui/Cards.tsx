@@ -15,11 +15,11 @@ const Cards: NextPage<Props> = ({
   time,
   extUrl,
 }) => {
-  const st = title.slice(0, 40) + (title.length > 40 ? "..." : "");
+  const st = title.slice(0, 60) + (title.length > 60 ? "..." : "");
   return (
     <div
       key={id}
-      className='flex flex-col justify-between bg-[#1F2125] p-3 w-full h-40 rounded-xl overflow-hidden shadow-md'
+      className='flex flex-col justify-between bg-[#1F2125] p-3 w-full h-60 rounded-xl overflow-hidden shadow-md'
     >
       <div className='relative rounded-t-xl h-45 w-full block overflow-hidden cursor-pointer border-2 py-2'>
         <a href={extUrl} target='_blank' rel='noopener noreferrer'>
@@ -36,9 +36,9 @@ const Cards: NextPage<Props> = ({
         </a>
       </div>
 
-      <div className='font-bold text-xs p-2'>{st}</div>
+      <div className='font-bold text-sm p-2'>{st}</div>
       <div className='items-end flex justify-between px-2'>
-        <div className='font-thin text-xs text-slate-400'>{time}</div>
+        <div className='font-thin text-sm text-slate-400'>{time}</div>
       </div>
     </div>
   );

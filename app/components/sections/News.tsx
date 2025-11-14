@@ -53,7 +53,7 @@ export default async function Feeds() {
        <div className='flex justify-center mx-5 mt-5 items-center font-bold text-2xl tracking-wide'>
           <>Latest News</>
         </div>
-      <div className='grid max-lg:grid-cols-1 grid-cols-2 gap-8 mt-5 px-5'>
+      <div className='flex flex-col gap-8 mt-5 px-5'>
         {datas.map((data) => (
           <Cards
             key={data.id}

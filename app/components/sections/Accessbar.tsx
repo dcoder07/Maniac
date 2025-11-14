@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import Feeds from "./Feeds";
+import News from "./News";
 
 interface Props {}
 
@@ -12,8 +12,7 @@ const Accessbar: NextPage<Props> = ({}) => {
         </div>
       </div>
       <div className='flex-1/2 overflow-y-auto scrollbar-hide'>
-        
-        <Feeds />
+        <News />
       </div>
     </div>
   );
