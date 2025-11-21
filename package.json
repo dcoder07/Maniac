@@ -2,6 +2,7 @@
   "name": "my-movie-app",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -9,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.34.5",
     "@prisma/client": "^6.19.0",
     "lucide-react": "^0.511.0",
     "mongodb": "^6.20.0",

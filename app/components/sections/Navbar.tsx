@@ -1,12 +1,4 @@
 "use client";
-import {
-  SignInButton,
-  SignOutButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
 import { NextPage } from "next";
 import {
   Compass,
@@ -49,59 +41,39 @@ const Navbar: NextPage<Props> = () => {
   const [selectedId, setSelectedId] = useState<number>(1);
   return (
     <div className='flex flex-col justify-evenly gap-5 px-2 py-12 w-xs max-lg:w-auto mx-5'>
-      <header className='flex justify-end items-center p-4 gap-4 h-16 '>
-        <SignedOut>
-          <div className='flex max-lg:flex-col lg:border pl-2 text-sm rounded-full border-amber-300 gap-2  '>
-            <SignInButton />
-            <div className='bg-amber-300 text-black  rounded-full font-bold  h-9 p-2 cursor-pointer'>
-              <SignUpButton>Sign Up</SignUpButton>
-            </div>
-          </div>
-        </SignedOut>
-        <SignedIn>
-          <div className='bg-amber-300 text-black rounded-full font-bold text-sm p-2 cursor-pointer'>
-            <SignOutButton />
-          </div>
-        </SignedIn>
-      </header>
-
       <div>
-        <SignedIn>
-          <div className='flex flex-col items-center'>
-            <div className='w-25 h-25 rounded-full border-3 border-amber-300 p-2'>
-              <ImageC
-                src='/ProfileImg.jpg'
-                className='rounded-full object-cover h-full w-full'
-                width={100}
-                height={100}
-                alt='Picture of the author'
-              />
-            </div>
-
-            <div className='text-white mt-5 text-lg font-bold whitespace-nowrap '>
-              Dishank Patil
-            </div>
-            <div className='text-gray-400 font-thin max-lg:text-xs'>
-              @dcoder07
-            </div>
+        <div className='flex flex-col items-center mb-5 border relative'>
+          <div className='w-25 h-25 rounded-full border-3 border-amber-300 p-2'>
+            <ImageC
+              src='/ProfileImg.jpg'
+              className='rounded-full object-cover h-full w-full'
+              width={100}
+              height={100}
+              alt='Picture of the author'
+            />
           </div>
 
-          <div className='flex p-2 text-white rounded-lg bg-[#1F2125] justify-evenly'>
-            {datas.map((data) => (
-              <div
-                key={data.id}
-                className='flex flex-col mx-2 items-center justify-center'
-              >
-                <span className='font-bold'>{data.count}</span>
-                <span className='text-xs text-gray-400'>{data.label}</span>
-              </div>
-            ))}
-          </div>
-        </SignedIn>
+          <div className='text-white mt-5 text-lg font-bold whitespace-nowrap '>Dishank Patil</div>
+          <div className='text-gray-400 font-thin max-lg:text-xs'>@dcoder07</div>
+
+          <div className='absolute bottom-0 left-60'>Post</div>
+        </div>
+
+        <div className='flex p-2 text-white rounded-lg bg-[#1F2125] justify-evenly'>
+          {datas.map((data) => (
+            <div
+              key={data.id}
+              className='flex flex-col mx-2 items-center justify-center select-none'
+            >
+              <span className='font-bold'>{data.count}</span>
+              <span className='text-xs text-gray-400'>{data.label}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className=' bg-[#1F2125] rounded-lg p-4'>
-        <div className='space-y-4'>
+        <div className='space-y-4 select-none'>
           {users.map((user) => (
             <Button
               key={user.id}
